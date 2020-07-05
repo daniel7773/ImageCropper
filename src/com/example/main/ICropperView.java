@@ -1,10 +1,10 @@
 package com.example.main;
 
-interface ILoginView {
+interface ICropperView {
 
-    LoginPresenter getPresenter();
+    CropperPresenter getPresenter();
 
-    void setPresenter(LoginPresenter loginPresenter);
+    void setPresenter(CropperPresenter loginPresenter);
 
     void updateModelFromView();
 
@@ -15,4 +15,6 @@ interface ILoginView {
     void close();
 
     void userRejected();
+
+    void invalidCrop();
 }

@@ -10,10 +10,10 @@ public class ImageCropper {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                LoginModel loginModel = new LoginModel();
-                LoginPresenter loginPresenter = new LoginPresenter();
+                CropperModel loginModel = new CropperModel();
+                CropperPresenter loginPresenter = new CropperPresenter();
                 loginPresenter.setModel(loginModel);
-                ILoginView loginView = new MyLoginView();
+                ICropperView loginView = new CropperView();
                 loginPresenter.setView(loginView);
                 loginPresenter.setOnLogin(new Runnable() {
 

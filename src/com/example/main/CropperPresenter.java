@@ -1,34 +1,42 @@
 package com.example.main;
 
-class LoginPresenter implements ILoginPresenter {
+class CropperPresenter implements ICropperPresenter {
 
-    LoginModel loginModel;
-    ILoginView loginView;
+    CropperModel loginModel;
+    CropperModel cropperModel;
+    ICropperView loginView;
+    ICropperView cropperView;
     private Runnable onLogin;
+    private Runnable onCropping;
 
     @Override
-    public LoginModel getModel() {
+    public CropperModel getModel() {
         return loginModel;
     }
 
     @Override
-    public void setModel(LoginModel loginModel) {
+    public void setModel(CropperModel loginModel) {
         this.loginModel = loginModel;
     }
 
     @Override
-    public ILoginView getView() {
+    public ICropperView getView() {
         return loginView;
     }
 
     @Override
-    public void setView(ILoginView loginView) {
+    public void setView(ICropperView loginView) {
         this.loginView = loginView;
     }
 
     @Override
     public void setOnLogin(Runnable onLogin) {
         this.onLogin = onLogin;
+    }
+
+    @Override
+    public void setOnCropping(Runnable onCropping) {
+        this.onCropping = onCropping;
     }
 
     @Override
@@ -49,5 +57,10 @@ class LoginPresenter implements ILoginPresenter {
         } else {
             loginView.userRejected();
         }
+    }
+
+    @Override
+    public void crop() {
+        //TODO: add cropping of image and image in method params
     }
 }

@@ -1,13 +1,13 @@
 package com.example.main;
 
-class MyLoginView extends javax.swing.JFrame implements ILoginView {
+class CropperView extends javax.swing.JFrame implements ICropperView {
 
-    private LoginPresenter loginPresenter;
+    private CropperPresenter cropPresenter;
 
     /**
      * Creates new form MyLoginView
      */
-    public MyLoginView() {
+    public CropperView() {
         initComponents();
     }
 
@@ -103,12 +103,18 @@ class MyLoginView extends javax.swing.JFrame implements ILoginView {
     }
 
     @Override
-    public LoginPresenter getPresenter() {
-        return loginPresenter;
+    public void invalidCrop() {
+        System.out.println("CropperView: oops, smth went wrong while trying to crop image");
+        // TODO: show message that smth went wrong
     }
 
     @Override
-    public void setPresenter(LoginPresenter loginPresenter) {
-        this.loginPresenter = loginPresenter;
+    public CropperPresenter getPresenter() {
+        return cropPresenter;
+    }
+
+    @Override
+    public void setPresenter(CropperPresenter cropPresenter) {
+        this.cropPresenter = cropPresenter;
     }
 }
